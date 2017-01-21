@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MvcEight.Models.Exam>
+
+@*@{
+    ViewBag.Title = "Index";
+}*@
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid red;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #E1C1E4;
+    }
+
+      .button {
+        background-color: burlywood; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+</style>
+
+<h2>Get All The Notices Related To Exam:</h2>
+<br/>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamSubject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamSyllabus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamSubject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamSyllabus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<hr/>
+
+<div style="text-align:center;">
+    <button class="button button4">@Html.ActionLink("Add Exam Notice", "Create")</button>
+</div>
+
+

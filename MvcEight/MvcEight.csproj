@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA05EAB4-F039-4EB5-807F-7F0A9CCDE418}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcEight</RootNamespace>
+    <AssemblyName>MvcEight</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AllTheCourseController.cs" />
+    <Compile Include="Controllers\AllTheResultController.cs" />
+    <Compile Include="Controllers\AllTheStudentController.cs" />
+    <Compile Include="Controllers\AllTheTeacherController.cs" />
+    <Compile Include="Controllers\BengaliController.cs" />
+    <Compile Include="Controllers\BengaliFourController.cs" />
+    <Compile Include="Controllers\BengaliOneEightController.cs" />
+    <Compile Include="Controllers\BengaliOneFiveController.cs" />
+    <Compile Include="Controllers\BengaliOneNineController.cs" />
+    <Compile Include="Controllers\BengaliOneSevenController.cs" />
+    <Compile Include="Controllers\BengaliOneSixController.cs" />
+    <Compile Include="Controllers\BengaliOneTenController.cs" />
+    <Compile Include="Controllers\BengaliThreeController.cs" />
+    <Compile Include="Controllers\BengaliTwoController.cs" />
+    <Compile Include="Controllers\BengaliTwoEightController.cs" />
+    <Compile Include="Controllers\BengaliTwoFiveController.cs" />
+    <Compile Include="Controllers\BengaliTwoNineController.cs" />
+    <Compile Include="Controllers\BengaliTwoSevenController.cs" />
+    <Compile Include="Controllers\BengaliTwoSixController.cs" />
+    <Compile Include="Controllers\BengaliTwoTenController.cs" />
+    <Compile Include="Controllers\ClassEightStudentController.cs" />
+    <Compile Include="Controllers\ClassFiveStudentController.cs" />
+    <Compile Include="Controllers\ClassFourStudentController.cs" />
+    <Compile Include="Controllers\ClassNineStudentController.cs" />
+    <Compile Include="Controllers\ClassOneStudentController.cs" />
+    <Compile Include="Controllers\ClassSevenStudentController.cs" />
+    <Compile Include="Controllers\ClassSixStudentController.cs" />
+    <Compile Include="Controllers\ClassTenStudentController.cs" />
+    <Compile Include="Controllers\ClassThreeStudentController.cs" />
+    <Compile Include="Controllers\ClassTwoStudentController.cs" />
+    <Compile Include="Controllers\EnglishController.cs" />
+    <Compile Include="Controllers\EnglishFourController.cs" />
+    <Compile Include="Controllers\EnglishOneEightController.cs" />
+    <Compile Include="Controllers\EnglishOneFiveController.cs" />
+    <Compile Include="Controllers\EnglishOneNineController.cs" />
+    <Compile Include="Controllers\EnglishOneSevenController.cs" />
+    <Compile Include="Controllers\EnglishOneSixController.cs" />
+    <Compile Include="Controllers\EnglishOneTenController.cs" />
+    <Compile Include="Controllers\EnglishThreeController.cs" />
+    <Compile Include="Controllers\EnglishTwoController.cs" />
+    <Compile Include="Controllers\EnglishTwoEightController.cs" />
+    <Compile Include="Controllers\EnglishTwoFiveController.cs" />
+    <Compile Include="Controllers\EnglishTwoNineController.cs" />
+    <Compile Include="Controllers\EnglishTwoSevenController.cs" />
+    <Compile Include="Controllers\EnglishTwoSixController.cs" />
+    <Compile Include="Controllers\EnglishTwoTenController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
+    <Compile Include="Controllers\HolidayController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\ExamContext.cs" />
+    <Compile Include="DAL\ExamInitializer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611191245428_mg1.cs" />
+    <Compile Include="Migrations\201611191245428_mg1.Designer.cs">
+      <DependentUpon>201611191245428_mg1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611191255391_mg2.cs" />
+    <Compile Include="Migrations\201611191255391_mg2.Designer.cs">
+      <DependentUpon>201611191255391_mg2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611191638286_mg3.cs" />
+    <Compile Include="Migrations\201611191638286_mg3.Designer.cs">
+      <DependentUpon>201611191638286_mg3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AllTheCourse.cs" />
+    <Compile Include="Models\AllTheResult.cs" />
+    <Compile Include="Models\AllTheStudent.cs" />
+    <Compile Include="Models\AllTheTeacher.cs" />
+    <Compile Include="Models\Bengali.cs" />
+    <Compile Include="Models\BengaliFour.cs" />
+    <Compile Include="Models\BengaliOneEight.cs" />
+    <Compile Include="Models\BengaliOneFive.cs" />
+    <Compile Include="Models\BengaliOneNine.cs" />
+    <Compile Include="Models\BengaliOneSeven.cs" />
+    <Compile Include="Models\BengaliOneSix.cs" />
+    <Compile Include="Models\BengaliOneTen.cs" />
+    <Compile Include="Models\BengaliThree.cs" />
+    <Compile Include="Models\BengaliTwo.cs" />
+    <Compile Include="Models\BengaliTwoEight.cs" />
+    <Compile Include="Models\BengaliTwoFive.cs" />
+    <Compile Include="Models\BengaliTwoNine.cs" />
+    <Compile Include="Models\BengaliTwoSeven.cs" />
+    <Compile Include="Models\BengaliTwoSix.cs" />
+    <Compile Include="Models\BengaliTwoTen.cs" />
+    <Compile Include="Models\ClassEightStudent.cs" />
+    <Compile Include="Models\ClassFiveStudent.cs" />
+    <Compile Include="Models\ClassFourStudent.cs" />
+    <Compile Include="Models\ClassNineStudent.cs" />
+    <Compile Include="Models\ClassOneStudent.cs" />
+    <Compile Include="Models\ClassSevenStudent.cs" />
+    <Compile Include="Models\ClassSixStudent.cs" />
+    <Compile Include="Models\ClassTenStudent.cs" />
+    <Compile Include="Models\ClassThreeStudent.cs" />
+    <Compile Include="Models\ClassTwoStudent.cs" />
+    <Compile Include="Models\English.cs" />
+    <Compile Include="Models\EnglishFour.cs" />
+    <Compile Include="Models\EnglishOneEight.cs" />
+    <Compile Include="Models\EnglishOneFive.cs" />
+    <Compile Include="Models\EnglishOneNine.cs" />
+    <Compile Include="Models\EnglishOneSeven.cs" />
+    <Compile Include="Models\EnglishOneSix.cs" />
+    <Compile Include="Models\EnglishOneTen.cs" />
+    <Compile Include="Models\EnglishThree.cs" />
+    <Compile Include="Models\EnglishTwo.cs" />
+    <Compile Include="Models\EnglishTwoEight.cs" />
+    <Compile Include="Models\EnglishTwoFive.cs" />
+    <Compile Include="Models\EnglishTwoNine.cs" />
+    <Compile Include="Models\EnglishTwoSeven.cs" />
+    <Compile Include="Models\EnglishTwoSix.cs" />
+    <Compile Include="Models\EnglishTwoTen.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\Holiday.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Students.cshtml" />
+    <Content Include="Views\Home\Teachers.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Exam\Create.cshtml" />
+    <Content Include="Views\Exam\Delete.cshtml" />
+    <Content Include="Views\Exam\Details.cshtml" />
+    <Content Include="Views\Exam\Edit.cshtml" />
+    <Content Include="Views\Exam\Index.cshtml" />
+    <Content Include="Views\Holiday\Create.cshtml" />
+    <Content Include="Views\Holiday\Delete.cshtml" />
+    <Content Include="Views\Holiday\Details.cshtml" />
+    <Content Include="Views\Holiday\Edit.cshtml" />
+    <Content Include="Views\Holiday\Index.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Delete.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Home\ClassOne.cshtml" />
+    <Content Include="Views\Bengali\Create.cshtml" />
+    <Content Include="Views\Bengali\Delete.cshtml" />
+    <Content Include="Views\Bengali\Details.cshtml" />
+    <Content Include="Views\Bengali\Edit.cshtml" />
+    <Content Include="Views\Bengali\Index.cshtml" />
+    <Content Include="Views\English\Create.cshtml" />
+    <Content Include="Views\English\Delete.cshtml" />
+    <Content Include="Views\English\Details.cshtml" />
+    <Content Include="Views\English\Edit.cshtml" />
+    <Content Include="Views\English\Index.cshtml" />
+    <Content Include="Views\Home\ClassTwo.cshtml" />
+    <Content Include="Views\Home\ClassThree.cshtml" />
+    <Content Include="Views\Home\ClassFour.cshtml" />
+    <Content Include="Views\Home\ClassFive.cshtml" />
+    <Content Include="Views\Home\ClassSix.cshtml" />
+    <Content Include="Views\Home\ClassSeven.cshtml" />
+    <Content Include="Views\Home\ClassEight.cshtml" />
+    <Content Include="Views\Home\ClassNine.cshtml" />
+    <Content Include="Views\Home\ClassTen.cshtml" />
+    <Content Include="Views\BengaliTwo\Create.cshtml" />
+    <Content Include="Views\BengaliTwo\Delete.cshtml" />
+    <Content Include="Views\BengaliTwo\Details.cshtml" />
+    <Content Include="Views\BengaliTwo\Edit.cshtml" />
+    <Content Include="Views\BengaliTwo\Index.cshtml" />
+    <Content Include="Views\EnglishTwo\Create.cshtml" />
+    <Content Include="Views\EnglishTwo\Delete.cshtml" />
+    <Content Include="Views\EnglishTwo\Details.cshtml" />
+    <Content Include="Views\EnglishTwo\Edit.cshtml" />
+    <Content Include="Views\EnglishTwo\Index.cshtml" />
+    <Content Include="Views\BengaliThree\Create.cshtml" />
+    <Content Include="Views\BengaliThree\Delete.cshtml" />
+    <Content Include="Views\BengaliThree\Details.cshtml" />
+    <Content Include="Views\BengaliThree\Edit.cshtml" />
+    <Content Include="Views\BengaliThree\Index.cshtml" />
+    <Content Include="Views\EnglishThree\Create.cshtml" />
+    <Content Include="Views\EnglishThree\Delete.cshtml" />
+    <Content Include="Views\EnglishThree\Details.cshtml" />
+    <Content Include="Views\EnglishThree\Edit.cshtml" />
+    <Content Include="Views\EnglishThree\Index.cshtml" />
+    <Content Include="Views\BengaliFour\Create.cshtml" />
+    <Content Include="Views\BengaliFour\Delete.cshtml" />
+    <Content Include="Views\BengaliFour\Details.cshtml" />
+    <Content Include="Views\BengaliFour\Edit.cshtml" />
+    <Content Include="Views\BengaliFour\Index.cshtml" />
+    <Content Include="Views\EnglishFour\Create.cshtml" />
+    <Content Include="Views\EnglishFour\Delete.cshtml" />
+    <Content Include="Views\EnglishFour\Details.cshtml" />
+    <Content Include="Views\EnglishFour\Edit.cshtml" />
+    <Content Include="Views\EnglishFour\Index.cshtml" />
+    <Content Include="Views\BengaliOneFive\Create.cshtml" />
+    <Content Include="Views\BengaliOneFive\Delete.cshtml" />
+    <Content Include="Views\BengaliOneFive\Details.cshtml" />
+    <Content Include="Views\BengaliOneFive\Edit.cshtml" />
+    <Content Include="Views\BengaliOneFive\Index.cshtml" />
+    <Content Include="Views\BengaliTwoFive\Create.cshtml" />
+    <Content Include="Views\BengaliTwoFive\Delete.cshtml" />
+    <Content Include="Views\BengaliTwoFive\Details.cshtml" />
+    <Content Include="Views\BengaliTwoFive\Edit.cshtml" />
+    <Content Include="Views\BengaliTwoFive\Index.cshtml" />
+    <Content Include="Views\EnglishOneFive\Create.cshtml" />
+    <Content Include="Views\EnglishOneFive\Delete.cshtml" />
+    <Content Include="Views\EnglishOneFive\Details.cshtml" />
+    <Content Include="Views\EnglishOneFive\Edit.cshtml" />
+    <Content Include="Views\EnglishOneFive\Index.cshtml" />
+    <Content Include="Views\EnglishTwoFive\Create.cshtml" />
+    <Content Include="Views\EnglishTwoFive\Delete.cshtml" />
+    <Content Include="Views\EnglishTwoFive\Details.cshtml" />
+    <Content Include="Views\EnglishTwoFive\Edit.cshtml" />
+    <Content Include="Views\EnglishTwoFive\Index.cshtml" />
+    <Content Include="Views\BengaliOneSix\Create.cshtml" />
+    <Content Include="Views\BengaliOneSix\Delete.cshtml" />
+    <Content Include="Views\BengaliOneSix\Details.cshtml" />
+    <Content Include="Views\BengaliOneSix\Edit.cshtml" />
+    <Content Include="Views\BengaliOneSix\Index.cshtml" />
+    <Content Include="Views\BengaliTwoSix\Create.cshtml" />
+    <Content Include="Views\BengaliTwoSix\Delete.cshtml" />
+    <Content Include="Views\BengaliTwoSix\Details.cshtml" />
+    <Content Include="Views\BengaliTwoSix\Edit.cshtml" />
+    <Content Include="Views\BengaliTwoSix\Index.cshtml" />
+    <Content Include="Views\EnglishOneSix\Create.cshtml" />
+    <Content Include="Views\EnglishOneSix\Delete.cshtml" />
+    <Content Include="Views\EnglishOneSix\Details.cshtml" />
+    <Content Include="Views\EnglishOneSix\Edit.cshtml" />
+    <Content Include="Views\EnglishOneSix\Index.cshtml" />
+    <Content Include="Views\EnglishTwoSix\Create.cshtml" />
+    <Content Include="Views\EnglishTwoSix\Delete.cshtml" />
+    <Content Include="Views\EnglishTwoSix\Details.cshtml" />
+    <Content Include="Views\EnglishTwoSix\Edit.cshtml" />
+    <Content Include="Views\EnglishTwoSix\Index.cshtml" />
+    <Content Include="Views\BengaliOneSeven\Create.cshtml" />
+    <Content Include="Views\BengaliOneSeven\Delete.cshtml" />
+    <Content Include="Views\BengaliOneSeven\Details.cshtml" />
+    <Content Include="Views\BengaliOneSeven\Edit.cshtml" />
+    <Content Include="Views\BengaliOneSeven\Index.cshtml" />
+    <Content Include="Views\BengaliTwoSeven\Create.cshtml" />
+    <Content Include="Views\BengaliTwoSeven\Delete.cshtml" />
+    <Content Include="Views\BengaliTwoSeven\Details.cshtml" />
+    <Content Include="Views\BengaliTwoSeven\Edit.cshtml" />
+    <Content Include="Views\BengaliTwoSeven\Index.cshtml" />
+    <Content Include="Views\EnglishOneSeven\Create.cshtml" />
+    <Content Include="Views\EnglishOneSeven\Delete.cshtml" />
+    <Content Include="Views\EnglishOneSeven\Details.cshtml" />
+    <Content Include="Views\EnglishOneSeven\Edit.cshtml" />
+    <Content Include="Views\EnglishOneSeven\Index.cshtml" />
+    <Content Include="Views\EnglishTwoSeven\Create.cshtml" />
+    <Content Include="Views\EnglishTwoSeven\Delete.cshtml" />
+    <Content Include="Views\EnglishTwoSeven\Details.cshtml" />
+    <Content Include="Views\EnglishTwoSeven\Edit.cshtml" />
+    <Content Include="Views\EnglishTwoSeven\Index.cshtml" />
+    <Content Include="Views\BengaliOneEight\Create.cshtml" />
+    <Content Include="Views\BengaliOneEight\Delete.cshtml" />
+    <Content Include="Views\BengaliOneEight\Details.cshtml" />
+    <Content Include="Views\BengaliOneEight\Edit.cshtml" />
+    <Content Include="Views\BengaliOneEight\Index.cshtml" />
+    <Content Include="Views\BengaliTwoEight\Create.cshtml" />
+    <Content Include="Views\BengaliTwoEight\Delete.cshtml" />
+    <Content Include="Views\BengaliTwoEight\Details.cshtml" />
+    <Content Include="Views\BengaliTwoEight\Edit.cshtml" />
+    <Content Include="Views\BengaliTwoEight\Index.cshtml" />
+    <Content Include="Views\EnglishOneEight\Create.cshtml" />
+    <Content Include="Views\EnglishOneEight\Delete.cshtml" />
+    <Content Include="Views\EnglishOneEight\Details.cshtml" />
+    <Content Include="Views\EnglishOneEight\Edit.cshtml" />
+    <Content Include="Views\EnglishOneEight\Index.cshtml" />
+    <Content Include="Views\EnglishTwoEight\Create.cshtml" />
+    <Content Include="Views\EnglishTwoEight\Delete.cshtml" />
+    <Content Include="Views\EnglishTwoEight\Details.cshtml" />
+    <Content Include="Views\EnglishTwoEight\Edit.cshtml" />
+    <Content Include="Views\EnglishTwoEight\Index.cshtml" />
+    <Content Include="Views\BengaliOneNine\Create.cshtml" />
+    <Content Include="Views\BengaliOneNine\Delete.cshtml" />
+    <Content Include="Views\BengaliOneNine\Details.cshtml" />
+    <Content Include="Views\BengaliOneNine\Edit.cshtml" />
+    <Content Include="Views\BengaliOneNine\Index.cshtml" />
+    <Content Include="Views\BengaliTwoNine\Create.cshtml" />
+    <Content Include="Views\BengaliTwoNine\Delete.cshtml" />
+    <Content Include="Views\BengaliTwoNine\Details.cshtml" />
+    <Content Include="Views\BengaliTwoNine\Edit.cshtml" />
+    <Content Include="Views\BengaliTwoNine\Index.cshtml" />
+    <Content Include="Views\EnglishOneNine\Create.cshtml" />
+    <Content Include="Views\EnglishOneNine\Delete.cshtml" />
+    <Content Include="Views\EnglishOneNine\Details.cshtml" />
+    <Content Include="Views\EnglishOneNine\Edit.cshtml" />
+    <Content Include="Views\EnglishOneNine\Index.cshtml" />
+    <Content Include="Views\EnglishTwoNine\Create.cshtml" />
+    <Content Include="Views\EnglishTwoNine\Delete.cshtml" />
+    <Content Include="Views\EnglishTwoNine\Details.cshtml" />
+    <Content Include="Views\EnglishTwoNine\Edit.cshtml" />
+    <Content Include="Views\EnglishTwoNine\Index.cshtml" />
+    <Content Include="Views\BengaliOneTen\Create.cshtml" />
+    <Content Include="Views\BengaliOneTen\Delete.cshtml" />
+    <Content Include="Views\BengaliOneTen\Details.cshtml" />
+    <Content Include="Views\BengaliOneTen\Edit.cshtml" />
+    <Content Include="Views\BengaliOneTen\Index.cshtml" />
+    <Content Include="Views\BengaliTwoTen\Create.cshtml" />
+    <Content Include="Views\BengaliTwoTen\Delete.cshtml" />
+    <Content Include="Views\BengaliTwoTen\Details.cshtml" />
+    <Content Include="Views\BengaliTwoTen\Edit.cshtml" />
+    <Content Include="Views\BengaliTwoTen\Index.cshtml" />
+    <Content Include="Views\EnglishOneTen\Create.cshtml" />
+    <Content Include="Views\EnglishOneTen\Delete.cshtml" />
+    <Content Include="Views\EnglishOneTen\Details.cshtml" />
+    <Content Include="Views\EnglishOneTen\Edit.cshtml" />
+    <Content Include="Views\EnglishOneTen\Index.cshtml" />
+    <Content Include="Views\EnglishTwoTen\Create.cshtml" />
+    <Content Include="Views\EnglishTwoTen\Delete.cshtml" />
+    <Content Include="Views\EnglishTwoTen\Details.cshtml" />
+    <Content Include="Views\EnglishTwoTen\Edit.cshtml" />
+    <Content Include="Views\EnglishTwoTen\Index.cshtml" />
+    <Content Include="Views\ClassOneStudent\Create.cshtml" />
+    <Content Include="Views\ClassOneStudent\Delete.cshtml" />
+    <Content Include="Views\ClassOneStudent\Details.cshtml" />
+    <Content Include="Views\ClassOneStudent\Edit.cshtml" />
+    <Content Include="Views\ClassOneStudent\Index.cshtml" />
+    <Content Include="Views\ClassTwoStudent\Create.cshtml" />
+    <Content Include="Views\ClassTwoStudent\Delete.cshtml" />
+    <Content Include="Views\ClassTwoStudent\Details.cshtml" />
+    <Content Include="Views\ClassTwoStudent\Edit.cshtml" />
+    <Content Include="Views\ClassTwoStudent\Index.cshtml" />
+    <Content Include="Views\ClassThreeStudent\Create.cshtml" />
+    <Content Include="Views\ClassThreeStudent\Delete.cshtml" />
+    <Content Include="Views\ClassThreeStudent\Details.cshtml" />
+    <Content Include="Views\ClassThreeStudent\Edit.cshtml" />
+    <Content Include="Views\ClassThreeStudent\Index.cshtml" />
+    <Content Include="Views\ClassFourStudent\Create.cshtml" />
+    <Content Include="Views\ClassFourStudent\Delete.cshtml" />
+    <Content Include="Views\ClassFourStudent\Details.cshtml" />
+    <Content Include="Views\ClassFourStudent\Edit.cshtml" />
+    <Content Include="Views\ClassFourStudent\Index.cshtml" />
+    <Content Include="Views\ClassFiveStudent\Create.cshtml" />
+    <Content Include="Views\ClassFiveStudent\Delete.cshtml" />
+    <Content Include="Views\ClassFiveStudent\Details.cshtml" />
+    <Content Include="Views\ClassFiveStudent\Edit.cshtml" />
+    <Content Include="Views\ClassFiveStudent\Index.cshtml" />
+    <Content Include="Views\ClassSixStudent\Create.cshtml" />
+    <Content Include="Views\ClassSixStudent\Delete.cshtml" />
+    <Content Include="Views\ClassSixStudent\Details.cshtml" />
+    <Content Include="Views\ClassSixStudent\Edit.cshtml" />
+    <Content Include="Views\ClassSixStudent\Index.cshtml" />
+    <Content Include="Views\ClassSevenStudent\Create.cshtml" />
+    <Content Include="Views\ClassSevenStudent\Delete.cshtml" />
+    <Content Include="Views\ClassSevenStudent\Details.cshtml" />
+    <Content Include="Views\ClassSevenStudent\Edit.cshtml" />
+    <Content Include="Views\ClassSevenStudent\Index.cshtml" />
+    <Content Include="Views\ClassEightStudent\Create.cshtml" />
+    <Content Include="Views\ClassEightStudent\Delete.cshtml" />
+    <Content Include="Views\ClassEightStudent\Details.cshtml" />
+    <Content Include="Views\ClassEightStudent\Edit.cshtml" />
+    <Content Include="Views\ClassEightStudent\Index.cshtml" />
+    <Content Include="Views\ClassNineStudent\Create.cshtml" />
+    <Content Include="Views\ClassNineStudent\Delete.cshtml" />
+    <Content Include="Views\ClassNineStudent\Details.cshtml" />
+    <Content Include="Views\ClassNineStudent\Edit.cshtml" />
+    <Content Include="Views\ClassNineStudent\Index.cshtml" />
+    <Content Include="Views\ClassTenStudent\Create.cshtml" />
+    <Content Include="Views\ClassTenStudent\Delete.cshtml" />
+    <Content Include="Views\ClassTenStudent\Details.cshtml" />
+    <Content Include="Views\ClassTenStudent\Edit.cshtml" />
+    <Content Include="Views\ClassTenStudent\Index.cshtml" />
+    <Content Include="Views\AllTheTeacher\Create.cshtml" />
+    <Content Include="Views\AllTheTeacher\Delete.cshtml" />
+    <Content Include="Views\AllTheTeacher\Details.cshtml" />
+    <Content Include="Views\AllTheTeacher\Edit.cshtml" />
+    <Content Include="Views\AllTheTeacher\Index.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassOneTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassTwoTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassThreeTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassFourTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassFiveTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassSixTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassSevenTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassEightTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassNineTeacher.cshtml" />
+    <Content Include="Views\AllTheTeacher\ClassTenTeacher.cshtml" />
+    <Content Include="Views\AllTheCourse\Create.cshtml" />
+    <Content Include="Views\AllTheCourse\Delete.cshtml" />
+    <Content Include="Views\AllTheCourse\Details.cshtml" />
+    <Content Include="Views\AllTheCourse\Edit.cshtml" />
+    <Content Include="Views\AllTheCourse\Index.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassOneCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassTwoCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassThreeCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassFourCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassFiveCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassSixCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassSevenCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassEightCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassNineCourse.cshtml" />
+    <Content Include="Views\AllTheCourse\ClassTenCourse.cshtml" />
+    <Content Include="Views\AllTheStudent\Create.cshtml" />
+    <Content Include="Views\AllTheStudent\Delete.cshtml" />
+    <Content Include="Views\AllTheStudent\Details.cshtml" />
+    <Content Include="Views\AllTheStudent\Edit.cshtml" />
+    <Content Include="Views\AllTheStudent\Index.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassOneStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassTwoStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassThreeStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassFourStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassFiveStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassSixStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassSevenStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassEightStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassNineStudent.cshtml" />
+    <Content Include="Views\AllTheStudent\ReClassTenStudent.cshtml" />
+    <Content Include="Views\AllTheResult\Create.cshtml" />
+    <Content Include="Views\AllTheResult\Delete.cshtml" />
+    <Content Include="Views\AllTheResult\Details.cshtml" />
+    <Content Include="Views\AllTheResult\Edit.cshtml" />
+    <Content Include="Views\AllTheResult\Index.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassOneResult.cshtml" />
+    <Content Include="Views\AllTheResult\ClassOneBengali.cshtml" />
+    <Content Include="Views\AllTheResult\ClassOneEnglish.cshtml" />
+    <Content Include="Views\AllTheResult\ClassOneMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassTwoResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassThreeResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassFourResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassFiveResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassSixResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassSevenResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassEightResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassNineResult.cshtml" />
+    <Content Include="Views\AllTheResult\ReClassTenResult.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTwoBengali.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTwoEnglish.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTwoMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassThreeBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassThreeBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassThreeEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassThreeEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassThreeMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassThreeScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFourReligion.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassFiveReligion.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSixReligion.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassSevenReligion.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassEightReligion.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineGeneralMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineHigherMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNinePhysics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineChemistry.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineBiology.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassNineReligion.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenBengaliOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenBengaliTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenEnglishOne.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenEnglishTwo.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenGeneralMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenHigherMathematics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenPhysics.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenChemistry.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenBiology.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenSocialScience.cshtml" />
+    <Content Include="Views\AllTheResult\ClassTenReligion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611191245428_mg1.resx">
+      <DependentUpon>201611191245428_mg1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611191255391_mg2.resx">
+      <DependentUpon>201611191255391_mg2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611191638286_mg3.resx">
+      <DependentUpon>201611191638286_mg3.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55576</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55576/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

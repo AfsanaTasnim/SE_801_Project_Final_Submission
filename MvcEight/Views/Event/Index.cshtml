@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MvcEight.Models.Event>
+
+@*@{
+    ViewBag.Title = "Index";
+}*@
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid red;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #E1C1E4;
+    }
+
+    .button {
+        background-color: burlywood; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+</style>
+
+
+
+<h2>Get Ready For Exclusice Events At The School Premises</h2>
+<br/>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDetails)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDetails)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<hr/>
+
+<div style="text-align:center;">
+    <button class="button button4">@Html.ActionLink("Add Event Notice", "Create")</button>
+</div>
+
+
